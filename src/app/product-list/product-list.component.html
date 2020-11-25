@@ -1,0 +1,9 @@
+<h1 class="text-primary">Product List</h1>
+<ul>
+  <li *ngFor="let product of products">
+    {{ product.productId }} {{ product.productName }} {{ product.price }}
+    {{ product.color }} {{ product.image }} {{ product.specification }}
+    {{ product.manufacturer }} {{ product.quantity }}
+    {{ product.category }}
+  </li>
+</ul>
