@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductService } from './services/productservice';
 import { HttpClientModule } from '@angular/common/http';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
     ProductDetailsComponent,
     ProductListComponent,
     AddCustomerComponent,
+    CustomerDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [ProductService],

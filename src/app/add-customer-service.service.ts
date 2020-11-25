@@ -4,23 +4,24 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class AddCustomerService {
+export class CustomerService {
 
   constructor(private http:HttpClient) { }
   
-    public doRegistration(customer:any){
-      return this.http.post("http://localhost:8085/customer/add", customer, {responseType: 'text' as 'json'});
+    public addCustomer(customer:any){
+      return this.http.post("http://localhost:8585/customers/add", customer, {responseType: 'text' as 'json'});
+    }
+
+    public getAllCustomers(){
+      return this.http.get("http://localhost:8585/customer/allCustomers");
     }
   
-    public getCustomers(){
-      return this.http.get("http://localhost:8085/customer/allCustomers");
-    }
-  
-    public getCustomersById(id:number){
-      return this.http.get(`http://localhost:8085/customer/by/${id}`);
+    public getCustomerById(id:number){
+      return this.http.get(`http://localhost:8585/customer/by/customerId/${id}`);
     }
   
     public deleteCustomer(id:number){
-      return this.http.delete(`http://localhost:8085/customer/delete/${id}`);
+      return this.http.delete(`http://localhost:8585/customer/remove/${id}`);
     }
+  
 }
