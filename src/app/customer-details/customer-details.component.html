@@ -1,49 +1,32 @@
-<div class="container">
-        <div class="container">
-            <div class="input-group col-md-12" style="text-align: center">
-                <input type="text" class="search-query form-control" placeholder="Search with customer id"  name="email" [(ngModel)]="id"/>
-                <span class="input-group-btn">
-                    <button class="btn btn-danger" type="button" (click)="getCustomerById()">
-                        <span class=" glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
-            </div>
-            <div>The customer detail with customer id {{id}} are as follows
-                <br>
-                Customer Customername: {{customerById.customerName}}
-                <br>
-                Customer MobileNumber: {{customerById.mobileNo}}
-                <br>
-                Customer Email: {{customerById.email}}
-                <br>
-                Customer Address: {{customerById.address}}
-                <br>
-                Customer Role: {{customerById.role}}}}
-            </div>
-            <div class="row col-md-6 col-md-offset-2 custyle">
-            <table class="table table-striped custab">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>CustomerName</th>
-                    <th>MobileNumber</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Role</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let customer of customers">
-                    <td>{{customer.customerId}}</td>
-                    <td>{{customer.customerName}}</td>
-                    <td>{{customer.mobileNo}}</td>
-                    <td>{{customer.email}}</td>
-                    <td>{{customer.address}}</td>
-                    <td>{{customer.role}}</td>
-                    <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteCustomer(customer.customerId)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
-                </tr>
-            </tbody>
-            </table>
-        </div>
+
+<h1 class="text-primary">Fetch Customer Details</h1>
+
+<form #myform="ngForm" (ngSubmit)="myform.valid && fetchCustomer(myform)">
+  <div>
+    <label for="id"> Id </label>
+    <input type="number" id="id" name="customerId" ngModel />
+  </div>
+
+  <input type="submit" value="Submit" />
+</form>
+
+<div class="jumbotron" *ngIf="customer !== undefined">
+    Customer CustomerId: {{customer.customerId}}
+    <br>
+
+        Customer Customername: {{customer.customerName}}
+        <br>
+        Customer MobileNumber: {{customer.mobileNo}}
+        <br>
+        Customer Email: {{customer.email}}
+        <br>
+        Customer Address: 
+        {{customer.address.buildingNo}},
+        {{customer.address.streetName}},
+        {{customer.address.area}},
+        {{customer.address.city}},
+        {{customer.address.state}}-
+        {{customer.address.zip}}
+        <br>
+        Customer Role: {{customer.role}}
 </div>
-    

@@ -19,7 +19,7 @@ export class AddCustomerComponent  {
       let data = myform.value;
       this.address = new Address(data.buildingNo, data.streetName, data.area, data.city, data.state, data.zip);
       console.log(this.address);
-      this.customer1= new Customer(data.customerName,data.mobileNo,data.email,this.address,data.role);
+      this.customer1= new Customer(0,data.customerName,data.mobileNo,data.email,this.address,data.role);
     debugger;
     console.log(this.customer1);
         let resp = this.service.addCustomer(this.customer1);
