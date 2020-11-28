@@ -9,16 +9,14 @@ import { ProductService } from '../services/productservice';
 })
 export class ProductDetailsComponent {
   product: Product | undefined;
-
+  id:number=0;
   constructor(private productService: ProductService) {}
 
-  fetchProduct(myform: any) {
-    let data = myform.value;
-    let id: number = data.productId;
+  fetchProduct(productId: any) {
+    let data = productId.value;
+    this.id = data.productId;
 
-    let observable: Observable<Product> = this.productService.fetchProductById(
-      id
-    );
+    let observable: Observable<Product> = this.productService.fetchProductById(this.id);
     // let successHandler = (product: Product) => (this.product = product);
     // let errHandler = (err) => console.log('error is' + err.message);
     observable.subscribe(

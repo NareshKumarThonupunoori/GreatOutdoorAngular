@@ -12,6 +12,11 @@ import { ProductService } from './services/productservice';
 import { HttpClientModule } from '@angular/common/http';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { HomeComponent } from './home/home.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { LoginComponent } from './login/login.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { GotoComponent } from './goto/goto.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +26,11 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
     ProductListComponent,
     AddCustomerComponent,
     CustomerDetailsComponent,
+    HomeComponent,
+    AddUserComponent,
+    LoginComponent,
+    WelcomeComponent,
+    GotoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [ProductService],

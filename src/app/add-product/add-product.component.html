@@ -148,7 +148,7 @@
 
     <div class="form-group">
       <label for="manufacturer">Manufacturer</label>
-      <select
+      <input
         class="form-control"
         id="manufacturer"
         name="manufacturer"
@@ -156,13 +156,7 @@
         #manufacturer="ngModel"
         required
         class="form-control"
-      >
-        <option>--Select--</option>
-        <option>Addidas</option>
-        <option>Reebok</option>
-        <option>Nike</option>
-        <option>Puma</option>
-      </select>
+      />
       <div
         class="text-danger"
         *ngIf="manufacturer.errors != null && manufacturer.errors.required"
@@ -196,8 +190,9 @@
     <button type="submit" class="btn btn-primary">Add Product</button>
   </form>
 </div>
-<h3>Details Submitted</h3>
 <div *ngIf="product !== undefined">
+
+<h3>Details Submitted</h3>
   {{ product.productName }} {{ product.price }} {{ product.image }} {{ product.color }}
     {{ product.category }}   {{ product.quantity }} {{ product.manufacturer }}
   {{ product.specification }} 
