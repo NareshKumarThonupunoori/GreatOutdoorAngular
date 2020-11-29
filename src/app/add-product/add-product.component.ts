@@ -25,9 +25,7 @@ export class AddProductComponent {
       data.specification
      
     );
-    let observable: Observable<Product> = this.productService.addProduct(
-      this.product
-    );
+    let observable: Observable<Product> = this.productService.addProduct(this.product);
     observable.subscribe(
       (product: Product) => (this.product = product),
       (err) => console.log('error is' + err.message)

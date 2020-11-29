@@ -67,7 +67,23 @@
       </div>
     </div>
     <hr />
-
+    <div class="form-group">
+      <label for="color">color</label>
+      <input
+        id="color"
+        name="color"
+        ngModel
+        #color="ngModel"
+        required
+        class="form-control"
+      />
+      <div
+        class="text-danger"
+        *ngIf="color.errors != null && color.errors.required"
+      >
+      color can not be empty
+      </div>
+    </div><!--
     <div class="form-check-inline">
       <label class="form-check-label text-dark" for="black">Black</label>
       <input
@@ -106,7 +122,7 @@
         Select One
       </div>
     </div>
-    
+  -->
     <hr />
     <div class="form-group">
       <label for="category">Category</label>
