@@ -17,6 +17,10 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { GotoComponent } from './goto/goto.component';
+import { AddOrderComponent } from 'src/app/add-order/add-order.component';
+import { OrderDetailsComponent } from 'src/app/order-details/order-details.component';
+import { OrderListComponent } from 'src/app/order-list/order-list.component';
+import { OrderService } from 'src/app/services/orderservice';
 
 @NgModule({
   declarations: [
@@ -31,9 +35,13 @@ import { GotoComponent } from './goto/goto.component';
     LoginComponent,
     WelcomeComponent,
     GotoComponent,
+    AddOrderComponent,
+    OrderDetailsComponent,
+    OrderListComponent
+    
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [ProductService],
+  providers: [ProductService,OrderService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
